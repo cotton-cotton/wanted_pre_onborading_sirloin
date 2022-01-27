@@ -13,19 +13,17 @@ import EtcSetting from '../components/EtcSetting/EtcSetting.js';
 
 function Main() {
   return (
-    <>
-      <Wrapper>
-        <ExpoSalesPeriodSetting />
-        <ProdBasicInfo />
-        <ProdOption />
-        <ProdDescImg />
-        <SalerRecImg />
-        <ProdInfoNotice />
-        <ProdDeliverySetting />
-        <ProdBenefitPerSetting />
-        <EtcSetting />
-      </Wrapper>
-    </>
+    <Wrapper>
+      <ExpoSalesPeriodSetting />
+      <ProdBasicInfo />
+      <ProdOption />
+      <ProdDescImg />
+      <SalerRecImg />
+      <ProdInfoNotice />
+      <ProdDeliverySetting />
+      <ProdBenefitPerSetting />
+      <EtcSetting />
+    </Wrapper>
   );
 }
 const Wrapper = styled.div`
