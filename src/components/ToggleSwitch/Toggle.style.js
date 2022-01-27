@@ -1,29 +1,16 @@
-import React from 'react';
 import styled from 'styled-components';
 
-export const ToggleBtn = () => {
-  return (
-    <SwitchWrapper>
-      <CheckLabel>
-        <InputCheck type="checkbox" />
-        <Switch />
-      </CheckLabel>
-    </SwitchWrapper>
-  );
-};
-
-const SwitchWrapper = styled.div`
-  border: 1px solid red;
+export const SwitchWrapper = styled.div`
   padding: 15px;
 `;
 
-const CheckLabel = styled.label`
+export const CheckLabel = styled.label`
   position: relative;
   display: block;
   width: 40px;
 `;
 
-const Switch = styled.span`
+export const Switch = styled.span`
   position: absolute;
   cursor: pointer;
   top: 4px;
@@ -31,16 +18,16 @@ const Switch = styled.span`
   right: 0;
   bottom: 0;
   height: 17px;
-  background-color: ${props => props.theme.color.gray};
+  background-color: #9f9f9f;
   border-radius: 20px;
   transition: 0.4s;
 
   &::before {
     content: '';
     position: absolute;
-    width: 22px;
-    height: 22px;
-    top: -2px;
+    width: 23px;
+    height: 23px;
+    top: -3px;
     border-radius: 50%;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     background-color: white;
@@ -48,7 +35,7 @@ const Switch = styled.span`
   }
 `;
 
-const InputCheck = styled.input`
+export const InputCheck = styled.input`
   opacity: 0;
   width: 40px;
   height: 17px;
@@ -59,7 +46,7 @@ const InputCheck = styled.input`
 
     &::before {
       background-color: #2919be;
-      transform: translateX(19px);
+      transform: translateX(18px);
       transition: 0.4s;
     }
   }
