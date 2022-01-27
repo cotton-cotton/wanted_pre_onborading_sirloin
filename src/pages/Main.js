@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import ExpoSalesPeriodSetting from '../components/ExpoSalesPeriodSetting/ExpoSalesPeriodSetting.js';
-import ProdBasicInfo from '../components/ProdBasicInfo/ProdBasicInfo.js';
+import ProdBasicInfo from '../components/ProdBasicInfo/ProdBasicInfo';
 import ProdOption from '../components/ProdOption/ProdOption.js';
 import ProdDescImg from '../components/ProdDescImg/ProdDescImg.js';
 import SalerRecImg from '../components/SalerRecImg/SalerRecImg.js';
@@ -15,15 +15,15 @@ function Main() {
   return (
     <>
       <Wrapper>
-        <ExpoSalesPeriodSetting />
+        {/* <ExpoSalesPeriodSetting /> */}
         <ProdBasicInfo />
-        <ProdOption />
+        {/* <ProdOption />
         <ProdDescImg />
         <SalerRecImg />
         <ProdInfoNotice />
         <ProdDeliverySetting />
         <ProdBenefitPerSetting />
-        <EtcSetting />
+        <EtcSetting /> */}
       </Wrapper>
     </>
   );
