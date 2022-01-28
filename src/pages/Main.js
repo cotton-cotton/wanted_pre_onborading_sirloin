@@ -2,7 +2,7 @@ import React from 'react';
 
 import ExpoSalesPeriodSetting from '../components/ExpoSalesPeriodSetting/ExpoSalesPeriodSetting.js';
 import { ProdBasicInfo } from '../components/ProdBasicInfo/ProdBasicInfo.js';
-import { ProdOption } from '../components/ProdOption/ProdOption.js';
+import ProdOption from '../components/ProdOption/ProdOption.js';
 import { ProdInfoNotice } from '../components/ProdInfoNotice/ProdInfoNotice.js';
 import { ImageUploadSection } from '../components/ImageUploadSection/ImageUploadSection.js';
 import ProdDeliverySetting from '../components/ProdDeliverySetting/ProdDeliverySetting.js';
@@ -48,9 +48,9 @@ function Main() {
           <ProdBasicInfo />
           <ProdOption />
           <ProdInfoNotice />
-          <ProdDeliverySetting />
           <ImageUploadSection title="상품 소개 이미지" />
           <ImageUploadSection title="구매자 추천 이미지" />
+          <ProdDeliverySetting />
           <ToggleSetting title="상품 혜택 허용 설정" content="마일리지 적립" />
           <ToggleSetting title="기타 설정" content="감사카드 제공" />
         </S.ContentWrap>
