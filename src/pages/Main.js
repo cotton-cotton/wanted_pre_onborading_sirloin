@@ -8,6 +8,7 @@ import styled from 'styled-components';
 // import { SalerRecImg } from '../components/SalerRecImg/SalerRecImg.js';
 // import { ProdInfoNotice } from '../components/ProdInfoNotice/ProdInfoNotice.js';
 // import { ProdDeliverySetting } from '../components/ProdDeliverySetting/ProdDeliverySetting.js';
+import { ImageUploadSection } from '../components/ImageUploadSection/ImageUploadSection.js';
 import { ToggleSetting } from '../components/ToggleSetting/ToggleSetting.js';
 
 function Main() {
@@ -20,6 +21,8 @@ function Main() {
       <SalerRecImg />
       <ProdInfoNotice />
       <ProdDeliverySetting /> */}
+      <ImageUploadSection title="상품 소개 이미지" />
+      <ImageUploadSection title="구매자 추천 이미지" />
       <ToggleSetting title="상품 혜택 허용 설정" content="마일리지 적립" />
       <ToggleSetting title="기타 설정" content="감사카드 제공" />
     </Wrapper>
