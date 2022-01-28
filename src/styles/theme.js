@@ -1,7 +1,7 @@
 const theme = {
   color: {
     darkPurple: '#352F6E',
-    lightPurple: '#D6D5E2',
+    lightPurple: '#ADA8E6',
     backgroundLightGray: '#FBFBFB',
     backgroundGray: '#EFEFEF',
     borderGray: '#E5E6E6',

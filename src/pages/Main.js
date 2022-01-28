@@ -1,33 +1,62 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import ExpoSalesPeriodSetting from '../components/ExpoSalesPeriodSetting/ExpoSalesPeriodSetting.js';
-import ProdBasicInfo from '../components/ProdBasicInfo/ProdBasicInfo.js';
-import ProdOption from '../components/ProdOption/ProdOption.js';
-import ProdDescImg from '../components/ProdDescImg/ProdDescImg.js';
-import SalerRecImg from '../components/SalerRecImg/SalerRecImg.js';
-import ProdInfoNotice from '../components/ProdInfoNotice/ProdInfoNotice.js';
+import { ProdBasicInfo } from '../components/ProdBasicInfo/ProdBasicInfo.js';
+import { ProdOption } from '../components/ProdOption/ProdOption.js';
+import { ProdInfoNotice } from '../components/ProdInfoNotice/ProdInfoNotice.js';
+import { ImageUploadSection } from '../components/ImageUploadSection/ImageUploadSection.js';
 import ProdDeliverySetting from '../components/ProdDeliverySetting/ProdDeliverySetting.js';
-import ProdBenefitPerSetting from '../components/ProdBenefitPerSetting/ProdBenefitPerSetting.js';
-import EtcSetting from '../components/EtcSetting/EtcSetting.js';
+import { ToggleSetting } from '../components/ToggleSetting/ToggleSetting.js';
+import * as S from './Main.style';
+
+const MENU_LIST = [
+  { name: '기본설정' },
+  { name: '회원' },
+  { name: '진열' },
+  { name: '상품' },
+  { name: '주문' },
+  { name: '배송' },
+  { name: '프로모션' },
+  { name: '고객 센터 관리' },
+  { name: '알림' },
+];
 
 function Main() {
   return (
-    <Wrapper>
-      <ExpoSalesPeriodSetting />
-      <ProdBasicInfo />
-      <ProdOption />
-      <ProdDescImg />
-      <SalerRecImg />
-      <ProdInfoNotice />
-      <ProdDeliverySetting />
-      <ProdBenefitPerSetting />
-      <EtcSetting />
-    </Wrapper>
+    <S.Wrapper>
+      <S.SideBar>
+        <S.LogoWrap>
+          <S.LogoImg src="/images/logo.png" />
+        </S.LogoWrap>
+        <S.MenuList>
+          {MENU_LIST.map((el, idx) => {
+            return (
+              <S.MenuListItem key={idx} isActive={el.name === '상품'}>
+                {el.name}
+              </S.MenuListItem>
+            );
+          })}
+        </S.MenuList>
+      </S.SideBar>
+      <S.MainWrap>
+        <S.Header>
+          <S.Blank />
+          <S.HeaderTitle>상품등록</S.HeaderTitle>
+        </S.Header>
+        <S.ContentWrap>
+          <ExpoSalesPeriodSetting />
+          <ProdBasicInfo />
+          <ProdOption />
+          <ProdInfoNotice />
+          <ProdDeliverySetting />
+          <ImageUploadSection title="상품 소개 이미지" />
+          <ImageUploadSection title="구매자 추천 이미지" />
+          <ToggleSetting title="상품 혜택 허용 설정" content="마일리지 적립" />
+          <ToggleSetting title="기타 설정" content="감사카드 제공" />
+        </S.ContentWrap>
+      </S.MainWrap>
+    </S.Wrapper>
   );
 }
-const Wrapper = styled.div`
-  width: 1000px;
-  padding: 20px;
-`;
+
 export default Main;

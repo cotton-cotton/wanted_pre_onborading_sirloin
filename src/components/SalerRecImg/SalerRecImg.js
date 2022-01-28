@@ -1,8 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
 
-function SalerRecImg() {
+export const SalerRecImg = () => {
   return <div>SalerRecImg</div>;
-}
-
-export default SalerRecImg;
+};
