@@ -42,6 +42,13 @@ function ProdDeliverySetting() {
     setIsPickupToggleOn(false);
   };
 
+  const disableDate = date => {
+    return (
+      date.getTime() > reserveStartTime.getTime() &&
+      date.getTime() < reserveEndTime.getTime()
+    );
+  };
+
   return (
     <Container>
       <Title>상품 배송 설정</Title>
@@ -77,70 +84,76 @@ function ProdDeliverySetting() {
             checked={isReserveToggleOn === true}
             onChange={handleReserveToggle}
           />
-          <OrderTimeWrapper>
-            <Text>주문 시간</Text>
-            <DateRangePicker>
-              <LocalizationProvider dateAdapter={AdapterDateFns}>
-                <DateTimePicker
-                  renderInput={props => <TextField {...props} />}
-                  value={reserveStartTime}
-                  onChange={newValue => {
-                    setReserveStartTime(newValue);
-                  }}
-                  ampm={false}
-                  inputFormat="yyyy.MM.dd hh:mm"
-                  mask="____.__.__ __:__"
-                  disablePast={true}
-                />
-                <TilderWrapper>~</TilderWrapper>
-                <DateTimePicker
-                  renderInput={props => <TextField {...props} />}
-                  value={reserveEndTime}
-                  onChange={newValue => {
-                    setReserveStartTime(newValue);
-                  }}
-                  ampm={false}
-                  inputFormat="yyyy.MM.dd hh:mm"
-                  mask="____.__.__ __:__"
-                  minDateTime={reserveStartTime}
-                />
-              </LocalizationProvider>
-            </DateRangePicker>
-          </OrderTimeWrapper>
-          <DeliveryDateWrapper>
-            <DawnDeliveryWrapper>
-              <Text>새벽 배송</Text>
-              <DateRangePicker>
-                <LocalizationProvider dateAdapter={AdapterDateFns}>
-                  <DesktopDatePicker
-                    inputFormat="yyyy.MM.dd"
-                    mask="____.__.__"
-                    value={dawnDeliveryDate}
-                    onChange={newValue => {
-                      setDawnDeliveryDate(newValue);
-                    }}
-                    renderInput={params => <TextField {...params} />}
-                  />
-                </LocalizationProvider>
-              </DateRangePicker>
-            </DawnDeliveryWrapper>
-            <NormalDeliveryWrapper>
-              <Text>일반 배송</Text>
-              <DateRangePicker>
-                <LocalizationProvider dateAdapter={AdapterDateFns}>
-                  <DesktopDatePicker
-                    inputFormat="yyyy.MM.dd"
-                    mask="____.__.__"
-                    value={normalDeliveryDate}
-                    onChange={newValue => {
-                      setNormalDeliveryDate(newValue);
-                    }}
-                    renderInput={params => <TextField {...params} />}
-                  />
-                </LocalizationProvider>
-              </DateRangePicker>
-            </NormalDeliveryWrapper>
-          </DeliveryDateWrapper>
+          {isReserveToggleOn === true && (
+            <DateRangePickerWrapper>
+              <OrderTimeWrapper>
+                <Text>주문 시간</Text>
+                <DateRangePicker>
+                  <LocalizationProvider dateAdapter={AdapterDateFns}>
+                    <DateTimePicker
+                      renderInput={props => <TextField {...props} />}
+                      value={reserveStartTime}
+                      onChange={newValue => {
+                        setReserveStartTime(newValue);
+                      }}
+                      ampm={false}
+                      inputFormat="yyyy.MM.dd hh:mm"
+                      mask="____.__.__ __:__"
+                      disablePast={true}
+                    />
+                    <TilderWrapper>~</TilderWrapper>
+                    <DateTimePicker
+                      renderInput={props => <TextField {...props} />}
+                      value={reserveEndTime}
+                      onChange={newValue => {
+                        setReserveEndTime(newValue);
+                      }}
+                      ampm={false}
+                      inputFormat="yyyy.MM.dd hh:mm"
+                      mask="____.__.__ __:__"
+                      minDateTime={reserveStartTime}
+                    />
+                  </LocalizationProvider>
+                </DateRangePicker>
+              </OrderTimeWrapper>
+              <DeliveryDateWrapper>
+                <DawnDeliveryWrapper>
+                  <Text>새벽 배송</Text>
+                  <DateRangePicker>
+                    <LocalizationProvider dateAdapter={AdapterDateFns}>
+                      <DesktopDatePicker
+                        inputFormat="yyyy.MM.dd"
+                        mask="____.__.__"
+                        value={dawnDeliveryDate}
+                        shouldDisableDate={disableDate}
+                        onChange={newValue => {
+                          setDawnDeliveryDate(newValue);
+                        }}
+                        renderInput={params => <TextField {...params} />}
+                      />
+                    </LocalizationProvider>
+                  </DateRangePicker>
+                </DawnDeliveryWrapper>
+                <NormalDeliveryWrapper>
+                  <Text>일반 배송</Text>
+                  <DateRangePicker>
+                    <LocalizationProvider dateAdapter={AdapterDateFns}>
+                      <DesktopDatePicker
+                        inputFormat="yyyy.MM.dd"
+                        mask="____.__.__"
+                        value={normalDeliveryDate}
+                        shouldDisableDate={disableDate}
+                        onChange={newValue => {
+                          setNormalDeliveryDate(newValue);
+                        }}
+                        renderInput={params => <TextField {...params} />}
+                      />
+                    </LocalizationProvider>
+                  </DateRangePicker>
+                </NormalDeliveryWrapper>
+              </DeliveryDateWrapper>
+            </DateRangePickerWrapper>
+          )}
         </ContentWrapper>
       </ReserveDelivWrapper>
     </Container>
@@ -227,4 +240,7 @@ const DateRangePicker = styled.div`
   display: flex;
   align-items: center;
 `;
+
+const DateRangePickerWrapper = styled.div``;
+
 export default ProdDeliverySetting;
