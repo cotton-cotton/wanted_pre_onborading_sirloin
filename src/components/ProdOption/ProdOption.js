@@ -4,33 +4,36 @@ import * as S from './ProdOption.style';
 import OptSet from './props/OptSet';
 
 function ProdOption() {
-  const DATA = [<OptSet />];
-  const copy = [...DATA];
+  // const DATA = [<OptSet />];
+  // const copy = [...DATA];
 
   const [optionSetList, setOptionSetList] = useState([]);
   const [value, setValue] = useState('');
-  const commentValue = e => {
-    setValue(e.target.value);
-  };
-  const addComments = () => {
-    /* openList.appendChild(() => setOptionList()); */
-    DATA.push(value);
-  };
-
-  const openList = () => {
-    setOptionSetList(DATA);
-    commentValue();
-  };
-
-  // const [isInput, setIsInput] = useState(false);
-  // const openInputId = () => {
-  //   setIsInput(true);
+  // const commentValue = e => {
+  //   setValue(e.target.value);
+  // };
+  // const addComments = () => {
+  //   /* openList.appendChild(() => setOptionList()); */
+  //   DATA.push(value);
   // };
 
-  const optSetDeleteBtn = id => {
-    setOptionSetList(optionSetList.filter(item => item.id !== id));
+  // const openList = () => {
+  //   setOptionSetList(DATA);
+  //   commentValue();
+  // };
+
+  const optSetDeleteBtn = () => {
+    setOptionSetNumber(prev => prev - 1);
   };
-  console.log(optSetDeleteBtn);
+
+  ////////////
+
+  const [optionSetNumber, setOptionSetNumber] = useState(0);
+
+  const openList = () => {
+    setOptionSetNumber(prev => prev + 1);
+  };
+
   return (
     <S.ProOptSection>
       <S.ProOptContentBar>
@@ -38,25 +41,13 @@ function ProdOption() {
         <S.ProOptBtn onClick={openList}>+ 옵션 세트 추가</S.ProOptBtn>
       </S.ProOptContentBar>
       <S.ProOptContent>
-        {/* 옵션세트를 추가하여 옵션을 구성해 주세요. */}
-
-        {optionSetList.map(key => {
-          return (
-            <>
-              <OptSet key={key} optSetDeleteBtn={optSetDeleteBtn} />
-              {addComments}
-            </>
-          );
-        })}
-        {console.log('openList', openList)}
-
-        {/* {isInput ? (
-          <OptSet activeDeleteBtn={activeDeleteBtn} />
+        {optionSetNumber === 0 ? (
+          <div>옵션세트를 추가하여 옵션을 구성해 주세요.</div>
         ) : (
-          <S.ProOptContentText>
-            옵션세트를 추가하여 옵션을 구성해 주세요.
-          </S.ProOptContentText>
-        )} */}
+          [...Array(optionSetNumber)].map((el, idx) => (
+            <OptSet key={idx} optSetDeleteBtn={optSetDeleteBtn} />
+          ))
+        )}
       </S.ProOptContent>
     </S.ProOptSection>
   );

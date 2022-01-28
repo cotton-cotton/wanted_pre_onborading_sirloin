@@ -10,10 +10,10 @@ const btnStyle = css`
 `;
 
 export const ProOptSection = styled.div`
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: start;
-  align-items: start;
+  align-items: start; */
 `;
 
 export const ProOptContentBar = styled.div`
@@ -24,9 +24,9 @@ export const ProOptContentBar = styled.div`
   height: 50px;
   padding: 0 20px;
   border: solid 1px ${({ theme }) => theme.color.borderGray};
-  border-bottom: none;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  /* border-bottom: none; */
+  /* border-top-left-radius: 10px; */
+  /* border-top-right-radius: 10px; */
 `;
 
 export const ProOptBar = styled.div`
@@ -40,10 +40,10 @@ export const ProOptBtn = styled.button`
 
 export const ProOptContent = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 600px;
   padding: 20px;
   border: solid 1px ${({ theme }) => theme.color.borderGray};
   border-top: none;
@@ -52,7 +52,7 @@ export const ProOptContent = styled.div`
   background-color: ${({ theme }) => theme.color.backgroundGray};
 `;
 
-export const ProOptContentText = styled.div`
-  /* padding-bottom: 200px; */
-  font-weight: ${({ theme }) => theme.fontWeight.bold};
-`;
+// export const ProOptContentText = styled.div`
+//   /* padding-bottom: 200px; */
+//   font-weight: ${({ theme }) => theme.fontWeight.bold};
+// `;
