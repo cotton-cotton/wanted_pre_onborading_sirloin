@@ -4,7 +4,6 @@ const btnStyle = css`
   padding: 5px 10px;
   border: solid 1px ${({ theme }) => theme.color.darkPurple};
   border-radius: 5px;
-  background-color: white;
   :hover {
     cursor: pointer;
   }
@@ -36,6 +35,7 @@ export const ProOptBar = styled.div`
 
 export const ProOptBtn = styled.button`
   ${btnStyle}
+  background-color: white;
 `;
 
 export const ProOptContent = styled.div`
@@ -53,6 +53,6 @@ export const ProOptContent = styled.div`
 `;
 
 export const ProOptContentText = styled.div`
-  padding-bottom: 200px;
+  /* padding-bottom: 200px; */
   font-weight: ${({ theme }) => theme.fontWeight.bold};
 `;
