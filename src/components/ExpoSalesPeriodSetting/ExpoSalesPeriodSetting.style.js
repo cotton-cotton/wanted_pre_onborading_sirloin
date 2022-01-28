@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   width: 100%;
   border: 1px solid ${({ theme }) => theme.color.borderGray};
+  margin-bottom: 40px;
 `;
 
 export const Title = styled.div`
