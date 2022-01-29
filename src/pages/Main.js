@@ -4,7 +4,7 @@ import ExpoSalesPeriodSetting from '../components/ExpoSalesPeriodSetting/ExpoSal
 import ProdBasicInfo from '../components/ProdBasicInfo/ProdBasicInfo';
 import { ProdBasicInfo } from '../components/ProdBasicInfo/ProdBasicInfo.js';
 import ProdOption from '../components/ProdOption/ProdOption.js';
-import { ProdInfoNotice } from '../components/ProdInfoNotice/ProdInfoNotice.js';
+import ProdInfoNotice from '../components/ProdInfoNotice/ProdInfoNotice.js';
 import { ImageUploadSection } from '../components/ImageUploadSection/ImageUploadSection.js';
 import ProdDeliverySetting from '../components/ProdDeliverySetting/ProdDeliverySetting.js';
 import { ToggleSetting } from '../components/ToggleSetting/ToggleSetting.js';
