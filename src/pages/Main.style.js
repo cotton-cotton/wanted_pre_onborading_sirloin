@@ -51,12 +51,25 @@ export const Blank = styled.div`
   border-bottom: 1px solid ${props => props.theme.color.borderGray};
 `;
 
-export const HeaderTitle = styled.div`
+export const HeaderContent = styled.div`
   display: flex;
+  justify-content: space-between;
   align-items: center;
   height: 47px;
-  padding-left: 20px;
-  font-weight: ${props => props.theme.fontWeight.bold}; ;
+  padding: 0px 20px;
+`;
+
+export const HeaderTitle = styled.h1`
+  font-weight: ${props => props.theme.fontWeight.bold};
+`;
+
+export const SaveBtn = styled.button`
+  padding: 8px 20px;
+  background-color: #352f6e;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
 `;
 
 export const ContentWrap = styled.div`
