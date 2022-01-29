@@ -3,7 +3,7 @@ import React from 'react';
 import ExpoSalesPeriodSetting from '../components/ExpoSalesPeriodSetting/ExpoSalesPeriodSetting.js';
 import { ProdBasicInfo } from '../components/ProdBasicInfo/ProdBasicInfo.js';
 import ProdOption from '../components/ProdOption/ProdOption.js';
-import { ProdInfoNotice } from '../components/ProdInfoNotice/ProdInfoNotice.js';
+import ProdInfoNotice from '../components/ProdInfoNotice/ProdInfoNotice.js';
 import { ImageUploadSection } from '../components/ImageUploadSection/ImageUploadSection.js';
 import ProdDeliverySetting from '../components/ProdDeliverySetting/ProdDeliverySetting.js';
 import { ToggleSetting } from '../components/ToggleSetting/ToggleSetting.js';

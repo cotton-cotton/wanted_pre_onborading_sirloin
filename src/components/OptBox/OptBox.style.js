@@ -16,11 +16,16 @@ const deleteBtnStyle = css`
   color: ${({ theme }) => theme.color.red};
 `;
 
-const smallInput = css`
-  padding: 10px 10px;
+const inputCommonStyle = css`
   border: solid 1px ${({ theme }) => theme.color.borderGray};
   border-radius: 5px;
-  background-color: ${({ theme }) => theme.color.backgroundGray};
+  background-color: white;
+`;
+
+const smallInput = css`
+  ${inputCommonStyle}
+  margin-right: 5px;
+  padding: 10px 10px;
   text-align: center;
   font-size: ${({ theme }) => theme.fontSize.small};
 `;
@@ -31,7 +36,8 @@ export const OptBox = styled.div`
   margin: 10px 0;
   padding: 20px;
   border-radius: 10px;
-  background-color: yellow;
+  border: solid 1px ${({ theme }) => theme.color.borderGray};
+  background-color: white;
 `;
 
 export const OptBoxBar = styled.div`
@@ -46,22 +52,21 @@ export const OptBoxDeleteBtn = styled.button`
 `;
 
 export const InputOptName = styled.input`
+  ${inputCommonStyle}
   margin-bottom: 10px;
   padding: 10px 20px;
   border-radius: 5px;
-  background-color: ${({ theme }) => theme.color.backgroundGray};
 `;
 
 export const OptInfo = styled.div`
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 `;
 
 export const NormalPriceSection = styled.div`
   display: flex;
   align-items: center;
 `;
-
 export const InputNormalPrice = styled.input`
   ${smallInput}
   width: 180px;
@@ -71,17 +76,14 @@ export const DiscountSection = styled.div`
   display: flex;
   align-items: center;
 `;
-
 export const InputDiscountRate = styled.input`
   ${smallInput}
-  width: 120px;
 `;
 
 export const SellingPriceSection = styled.div`
   display: flex;
   align-items: center;
 `;
-
 export const InputSellingPrice = styled.input`
   ${smallInput}
   width: 180px;
@@ -91,7 +93,6 @@ export const StockSection = styled.div`
   display: flex;
   align-items: center;
 `;
-
 export const InputStock = styled.input`
   ${smallInput}
   width: 120px;
@@ -100,7 +101,12 @@ export const InputStock = styled.input`
 export const TaxSection = styled.div``;
 
 export const TaxBtn = styled.button`
+  ${smallInput}
   padding: 10px 20px;
+  background-color: white;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const AddOptBox = styled.div`
@@ -108,13 +114,23 @@ export const AddOptBox = styled.div`
   justify-content: start;
   align-items: center;
 `;
-
 export const AddOptBoxBtn = styled.button`
   ${btnStyle}
   padding: 0px;
   width: 25px;
   height: 25px;
+  border: solid 1px ${({ theme }) => theme.color.borderGray};
+  background-color: white;
   font-size: ${({ theme }) => theme.fontSize.large};
 `;
 
-export const AddOptBoxText = styled.div``;
+export const AddOptBoxText = styled.div`
+  margin-left: 10px;
+`;
+
+export const AddOptBtn = styled.button`
+  ${btnStyle}
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+`;

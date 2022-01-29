@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SubOptBox from '../SubOptBox/SubOptBox';
+import SubOpt from '../SubOpt/SubOpt';
 import * as S from './OptBox.style';
 
 function OptBox({ handleMinusOptBox }) {
@@ -8,7 +8,6 @@ function OptBox({ handleMinusOptBox }) {
   const handlePlusSubOpt = () => {
     setSubOptNumber(prev => prev + 1);
   };
-
   const handleMinusSubOpt = () => {
     setSubOptNumber(prev => prev - 1);
   };
@@ -27,7 +26,7 @@ function OptBox({ handleMinusOptBox }) {
           <S.InputNormalPrice type="text" placeholder="상품 정상가 (필수)" />원
         </S.NormalPriceSection>
         <S.DiscountSection>
-          <S.InputDiscountRate />%
+          <S.InputDiscountRate placeholder="할인율" />%
         </S.DiscountSection>
         <S.SellingPriceSection>
           <S.InputSellingPrice type="text" placeholder="상품 판매가 (필수)" />원
@@ -39,9 +38,9 @@ function OptBox({ handleMinusOptBox }) {
           <S.TaxBtn>비과세</S.TaxBtn>
         </S.TaxSection>
       </S.OptInfo>
-      {[...Array(subOptNumber)].map((el, idx) => {
-        return <SubOptBox key={idx} handleMinusSubOpt={handleMinusSubOpt} />;
-      })}
+      {[...Array(subOptNumber)].map((el, idx) => (
+        <SubOpt key={idx} handleMinusSubOpt={handleMinusSubOpt} />
+      ))}
       <S.AddOptBox onClick={handlePlusSubOpt}>
         <S.AddOptBoxBtn>+</S.AddOptBoxBtn>
         <S.AddOptBoxText>추가 옵션 상품 추가</S.AddOptBoxText>
