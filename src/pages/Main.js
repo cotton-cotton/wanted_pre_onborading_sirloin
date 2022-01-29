@@ -22,6 +22,10 @@ const MENU_LIST = [
 ];
 
 function Main() {
+  const onClickSubmit = () => {
+    alert('상품정보가 저장되었습니다.');
+  };
+
   return (
     <S.Wrapper>
       <S.SideBar>
@@ -41,7 +45,10 @@ function Main() {
       <S.MainWrap>
         <S.Header>
           <S.Blank />
-          <S.HeaderTitle>상품등록</S.HeaderTitle>
+          <S.HeaderContent>
+            <S.HeaderTitle>상품등록</S.HeaderTitle>
+            <S.SaveBtn onClick={onClickSubmit}>저장하기</S.SaveBtn>
+          </S.HeaderContent>
         </S.Header>
         <S.ContentWrap>
           <ExpoSalesPeriodSetting />
