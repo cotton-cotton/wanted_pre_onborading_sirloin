@@ -2,37 +2,37 @@ import React, { useState } from 'react';
 import { ImageUpload } from '../ImageUpload/ImageUpload';
 import * as S from '../ProdBasicInfo/ProdBasicInfo.Style';
 
-function ProdBasicInfo() {
-  const CATEGORY_LIST = [
-    { id: 0, data: '구이용' },
-    { id: 1, data: '안심' },
-    { id: 2, data: '등심' },
-    { id: 3, data: '채끝' },
-    { id: 4, data: '특수' },
-    { id: 5, data: '양념' },
-    { id: 6, data: 'Bone' },
-    { id: 7, data: '선물제안' },
-    { id: 8, data: '이벤트' },
-    { id: 9, data: '요리용' },
-    { id: 10, data: '무료배송' },
-    { id: 11, data: '세트' },
-  ];
+const CATEGORY_LIST = [
+  { id: 0, data: '구이용' },
+  { id: 1, data: '안심' },
+  { id: 2, data: '등심' },
+  { id: 3, data: '채끝' },
+  { id: 4, data: '특수' },
+  { id: 5, data: '양념' },
+  { id: 6, data: 'Bone' },
+  { id: 7, data: '선물제안' },
+  { id: 8, data: '이벤트' },
+  { id: 9, data: '요리용' },
+  { id: 10, data: '무료배송' },
+  { id: 11, data: '세트' },
+];
 
+const PRODUCT_DATA = [
+  { id: null, value: '상품을 선택하세요.' },
+  { id: '0001', value: '알꼬리 300g' },
+  { id: '0002', value: '미니샤토 150g' },
+  { id: '0003', value: '안심추리 150g' },
+  { id: '0004', value: '안심슬라이스 150g' },
+  { id: '0005', value: '립아이' },
+  { id: '0006', value: '로스 등심 200g' },
+  { id: '0007', value: '꽃등심 200g' },
+  { id: '0008', value: '채끝 등심 200g' },
+];
+
+function ProdBasicInfo() {
   const [checkedList, setCheckedList] = useState([]);
   const [selectedDropValue, setSelectedDropValue] =
     useState('상품을 선택하세요.');
-
-  const PRODUCT_DATA = [
-    { id: null, value: '상품을 선택하세요.' },
-    { id: '0001', value: '알꼬리 300g' },
-    { id: '0002', value: '미니샤토 150g' },
-    { id: '0003', value: '안심추리 150g' },
-    { id: '0004', value: '안심슬라이스 150g' },
-    { id: '0005', value: '립아이' },
-    { id: '0006', value: '로스 등심 200g' },
-    { id: '0007', value: '꽃등심 200g' },
-    { id: '0008', value: '채끝 등심 200g' },
-  ];
 
   const onCheckedElement = (checked, item) => {
     if (checked) {
@@ -102,7 +102,7 @@ function ProdBasicInfo() {
           <S.ProductSearch onChange={handleDropProduct}>
             {PRODUCT_DATA.map(el => {
               return (
-                <option defaultValue={'123'} key={el.id}>
+                <option defaultValue="123" key={el.id}>
                   {el.value}
                 </option>
               );
