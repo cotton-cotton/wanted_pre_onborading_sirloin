@@ -29,47 +29,6 @@ const smallInput = css`
   font-size: ${({ theme }) => theme.fontSize.small};
 `;
 
-export const OptSetSection = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const OptSetBar = styled.div`
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  height: 50px;
-  padding: 0 20px;
-`;
-
-export const DeleteBtn = styled.button`
-  ${deleteBtnStyle}
-`;
-
-export const OptSetContent = styled.div`
-  margin-bottom: 40px;
-  padding: 20px;
-  border: solid 1px ${({ theme }) => theme.color.borderGray};
-  border-radius: 10px;
-  background-color: white;
-`;
-
-export const AddImgBox = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 250px;
-  border: solid 1px ${({ theme }) => theme.color.borderGray};
-  border-radius: 10px;
-  background-color: ${({ theme }) => theme.color.backgroundGray};
-`;
-
-export const AddImgBtn = styled.button`
-  ${btnStyle}
-  padding: 10px 40px;
-  background-color: ${({ theme }) => theme.color.backgroundGray};
-`;
-
 export const OptBox = styled.div`
   display: flex;
   flex-direction: column;
@@ -118,7 +77,6 @@ export const DiscountSection = styled.div`
 `;
 export const InputDiscountRate = styled.input`
   ${smallInput}
-  width: 120px;
 `;
 
 export const SellingPriceSection = styled.div`
