@@ -4,6 +4,7 @@ import * as S from './OptSet.style';
 function OptSet({ optSetDeleteBtn, id }) {
   const [optBoxNumber, setOptBoxNumber] = useState(1);
   const [subOptNumber, setSubOptNumber] = useState(0);
+
   const handleOptBox = () => {
     setOptBoxNumber(prev => prev + 1);
   };
