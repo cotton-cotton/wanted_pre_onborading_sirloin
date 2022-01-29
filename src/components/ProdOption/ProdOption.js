@@ -9,7 +9,6 @@ function ProdOption() {
   const optSetDeleteBtn = () => {
     setOptionSetNumber(prev => prev - 1);
   };
-
   const openList = () => {
     setOptionSetNumber(prev => prev + 1);
   };

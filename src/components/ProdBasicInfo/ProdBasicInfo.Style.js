@@ -1,26 +1,25 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  width: 1000px;
-  height: 1000px;
-  border: 2px solid ${({ theme }) => theme.color.borderGray};
+  width: 100%;
+  border: 1px solid ${({ theme }) => theme.color.borderGray};
+  margin-bottom: 40px;
 `;
 export const Title = styled.div`
-  height: 5.5%;
   padding: 20px;
   border-bottom: 1px solid ${({ theme }) => theme.color.borderGray};
 `;
 export const CategoryContainer = styled.div`
   display: flex;
-  height: 32%;
 `;
-export const Category = styled.div`
-  width: 16%;
-  height: 100%;
+
+export const SubTitle = styled.div`
+  width: 150px;
   padding: 20px;
   background-color: ${({ theme }) => theme.color.backgroundLightGray};
   border-right: 1px solid ${({ theme }) => theme.color.borderGray};
 `;
+
 export const SelectContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
@@ -93,15 +92,7 @@ export const FilterContainer = styled.div`
   border-top: 1px solid ${({ theme }) => theme.color.borderGray};
   border-bottom: 1px solid ${({ theme }) => theme.color.borderGray};
 `;
-export const Filter = styled.div`
-  display: flex;
-  width: 16%;
-  height: 100%;
-  padding: 20px;
-  align-items: center;
-  background-color: ${({ theme }) => theme.color.backgroundLightGray};
-  border-right: 1px solid ${({ theme }) => theme.color.borderGray};
-`;
+
 export const SearchBar = styled.form`
   display: flex;
   justify-content: space-evenly;
@@ -112,33 +103,28 @@ export const SearchBar = styled.form`
   border: 1px solid ${({ theme }) => theme.color.borderGray};
   border-radius: 10px;
 `;
+
 export const SearchInput = styled.input`
   width: 85%;
-  height: 90%;
   border-radius: 10px;
+  padding: 9px;
 `;
+
 export const SearchButton = styled.button`
   width: 13%;
-  height: 80%;
   background: none;
   border: 1px solid ${({ theme }) => theme.color.darkPurple};
   border-radius: 10px;
+  padding: 5px 0px;
 `;
+
 export const ProductNameContainer = styled.div`
   display: flex;
   align-items: center;
   height: 7%;
   border-bottom: 1px solid ${({ theme }) => theme.color.borderGray};
 `;
-export const Product = styled.div`
-  display: flex;
-  width: 16.1%;
-  height: 100%;
-  padding: 20px;
-  align-items: center;
-  background-color: ${({ theme }) => theme.color.backgroundLightGray};
-  border-right: 1px solid ${({ theme }) => theme.color.borderGray};
-`;
+
 export const ProductBar = styled.form`
   display: flex;
   justify-content: space-evenly;
@@ -146,18 +132,24 @@ export const ProductBar = styled.form`
   width: 40%;
   height: 100%;
 `;
+
 export const ProductSearch = styled.select`
   width: 92%;
   height: 75%;
+`;
+export const ProductSearch = styled.input`
+  width: 90%;
   border: 1px solid ${({ theme }) => theme.color.borderGray};
   border-radius: 10px;
-  padding-left: 7px;
+  padding: 9px;
 `;
+
 export const ProductCode = styled.div`
   display: flex;
-  width: 45%;
+  width: 30%;
   height: 100%;
 `;
+
 export const Code = styled.div`
   display: flex;
   padding-left: 20px;
@@ -167,49 +159,32 @@ export const Code = styled.div`
   background-color: ${({ theme }) => theme.color.backgroundLightGray};
   border-right: 1px solid ${({ theme }) => theme.color.borderGray};
 `;
+
 export const ShowingCode = styled.div`
   display: flex;
   align-items: center;
   margin-left: 40px;
 `;
+
 export const ProductIntro = styled.div`
   display: flex;
   align-items: center;
   height: 7%;
   border-bottom: 1px solid ${({ theme }) => theme.color.borderGray};
 `;
-export const Intro = styled.div`
-  display: flex;
-  width: 16%;
-  height: 100%;
-  padding: 20px;
-  align-items: center;
-  background-color: ${({ theme }) => theme.color.backgroundLightGray};
-  border-right: 1px solid ${({ theme }) => theme.color.borderGray};
-`;
+
 export const InfoInput = styled.input`
   width: 79%;
-  height: 75%;
   margin-left: 15px;
-  padding-left: 7px;
+  padding: 9px;
   border: 1px solid ${({ theme }) => theme.color.borderGray};
   border-radius: 10px;
 `;
 export const ProductThumbnail = styled.div`
   display: flex;
-  align-items: center;
-  height: 10%;
   border-bottom: 1px solid ${({ theme }) => theme.color.borderGray};
 `;
-export const Thumbnail = styled.div`
-  display: flex;
-  width: 16%;
-  height: 100%;
-  padding: 20px;
-  align-items: center;
-  background-color: ${({ theme }) => theme.color.backgroundLightGray};
-  border-right: 1px solid ${({ theme }) => theme.color.borderGray};
-`;
+
 export const AttachedButton = styled.button`
   width: 280px;
   height: 60px;
@@ -238,19 +213,9 @@ export const Cancel = styled.button`
 `;
 export const ProductImg = styled.div`
   display: flex;
-  align-items: center;
-  height: 25%;
   border-bottom: 1px solid ${({ theme }) => theme.color.borderGray};
 `;
-export const Img = styled.div`
-  display: flex;
-  width: 16%;
-  height: 100%;
-  padding: 20px;
-  align-items: center;
-  background-color: ${({ theme }) => theme.color.backgroundLightGray};
-  border-right: 1px solid ${({ theme }) => theme.color.borderGray};
-`;
+
 export const AttachedBox = styled.div`
   width: 30%;
   height: 90%;
@@ -266,15 +231,9 @@ export const StockContainer = styled.div`
   align-items: center;
   height: 6.5%;
 `;
-export const Stock = styled.div`
-  display: flex;
-  width: 16%;
-  height: 100%;
-  padding-left: 20px;
-  align-items: center;
-  background-color: ${({ theme }) => theme.color.backgroundLightGray};
-  border-right: 1px solid ${({ theme }) => theme.color.borderGray};
-`;
+
 export const StockNum = styled.div`
   margin-left: 20px;
 `;
+
+export const ContentWrap = styled.div``;

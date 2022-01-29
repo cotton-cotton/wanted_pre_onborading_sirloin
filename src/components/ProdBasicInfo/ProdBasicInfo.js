@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ImageUpload } from '../ImageUpload/ImageUpload';
 import * as S from '../ProdBasicInfo/ProdBasicInfo.Style';
 
 function ProdBasicInfo() {
@@ -16,6 +17,7 @@ function ProdBasicInfo() {
     { id: 10, data: '무료배송' },
     { id: 11, data: '세트' },
   ];
+
   const [checkedList, setCheckedList] = useState([]);
   const [selectedDropValue, setSelectedDropValue] =
     useState('상품을 선택하세요.');
@@ -51,7 +53,7 @@ function ProdBasicInfo() {
     <S.Wrapper>
       <S.Title>상품 기본 정보</S.Title>
       <S.CategoryContainer>
-        <S.Category>카테고리 *</S.Category>
+        <S.SubTitle>카테고리 *</S.SubTitle>
         <S.SelectContainer>
           <S.CheckBox>
             {CATEGORY_LIST.map(item => {
@@ -72,7 +74,7 @@ function ProdBasicInfo() {
           </S.CheckBox>
           <S.SelectedBox>
             {checkedList.length === 0 && (
-              <S.AlertMessage>{'카테고리를 지정해 주세요.'}</S.AlertMessage>
+              <S.AlertMessage>카테고리를 지정해 주세요.</S.AlertMessage>
             )}
             {checkedList.map(item => {
               return (
@@ -88,14 +90,14 @@ function ProdBasicInfo() {
         </S.SelectContainer>
       </S.CategoryContainer>
       <S.FilterContainer>
-        <S.Filter>필터 태그</S.Filter>
+        <S.SubTitle>필터 태그</S.SubTitle>
         <S.SearchBar>
-          <S.SearchInput placeholder={'필터태그를 검색해 주세요.'} />
+          <S.SearchInput placeholder="필터태그를 검색해 주세요." />
           <S.SearchButton>검색</S.SearchButton>
         </S.SearchBar>
       </S.FilterContainer>
       <S.ProductNameContainer>
-        <S.Product>상품명 *</S.Product>
+        <S.SubTitle>상품명 *</S.SubTitle>
         <S.ProductBar>
           <S.ProductSearch onChange={handleDropProduct}>
             {PRODUCT_DATA.map(el => {
@@ -113,44 +115,22 @@ function ProdBasicInfo() {
         </S.ProductCode>
       </S.ProductNameContainer>
       <S.ProductIntro>
-        <S.Intro>상품 구성 소개 정보 *</S.Intro>
-        <S.InfoInput placeholder={'상품 구성 소개 정보를 입력해 주세요.'} />
+        <S.SubTitle>상품 구성 소개 정보 *</S.SubTitle>
+        <S.InfoInput placeholder="상품 구성 소개 정보를 입력해 주세요." />
       </S.ProductIntro>
       <S.ProductThumbnail>
-        <S.Thumbnail>상품 썸네일</S.Thumbnail>
-        <S.AttachedButton>+ 이미지 첨부</S.AttachedButton>
-        <S.FileName>
-          이미지 파일명
-          <S.Cancel>X</S.Cancel>
-        </S.FileName>
+        <S.SubTitle>상품 썸네일</S.SubTitle>
+        <S.ContentWrap>
+          <ImageUpload isThumbnail={true} />
+        </S.ContentWrap>
       </S.ProductThumbnail>
       <S.ProductImg>
-        <S.Img>상품 대표 이미지</S.Img>
-        <S.AttachedBox>
-          <S.AttachedButton>+ 이미지 첨부</S.AttachedButton>
-        </S.AttachedBox>
-        <S.FileList>
-          <S.FileName>
-            이미지 파일명
-            <S.Cancel>X</S.Cancel>
-          </S.FileName>
-          <S.FileName>
-            이미지 파일명
-            <S.Cancel>X</S.Cancel>
-          </S.FileName>
-          <S.FileName>
-            이미지 파일명
-            <S.Cancel>X</S.Cancel>
-          </S.FileName>
-          <S.FileName>
-            이미지 파일명
-            <S.Cancel>X</S.Cancel>
-          </S.FileName>
-        </S.FileList>
+        <S.SubTitle>상품 대표 이미지</S.SubTitle>
+        <ImageUpload />
       </S.ProductImg>
       <S.StockContainer>
-        <S.Stock>상품 총 재고*</S.Stock>
-        <S.StockNum>{'[NN개]'}</S.StockNum>
+        <S.SubTitle>상품 총 재고*</S.SubTitle>
+        <S.StockNum>[NN개]</S.StockNum>
       </S.StockContainer>
     </S.Wrapper>
   );
