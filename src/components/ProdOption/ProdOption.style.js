@@ -46,7 +46,9 @@ export const ProOptContent = styled.div`
   background-color: ${({ theme }) => theme.color.backgroundGray};
 `;
 
-export const DefaultOptSet = styled.div`
-  min-height: 644.549px;
-  padding-top: 100px;
+export const ProOptContentText = styled.div`
+  height: 600px;
+  padding-top: 180px;
+  font-size: ${({ theme }) => theme.fontSize.large};
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
 `;
