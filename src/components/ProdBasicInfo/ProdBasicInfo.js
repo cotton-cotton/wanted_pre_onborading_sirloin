@@ -3,20 +3,34 @@ import * as S from '../ProdBasicInfo/ProdBasicInfo.Style';
 
 function ProdBasicInfo() {
   const CATEGORY_LIST = [
-    { id: 0, data: '첫번째 카테고리 입니다.' },
-    { id: 1, data: '두번째 카테고리 입니다.' },
-    { id: 2, data: '세번째 카테고리 입니다.' },
-    { id: 3, data: '네번째 카테고리 입니다.' },
-    { id: 4, data: '다섯번째 카테고리 입니다.' },
-    { id: 5, data: '여섯번째 카테고리 입니다.' },
-    { id: 6, data: '일곱번째 카테고리 입니다.' },
-    { id: 7, data: '일곱번째 카테고리 입니다.' },
-    { id: 8, data: '일곱번째 카테고리 입니다.' },
-    { id: 9, data: '일곱번째 카테고리 입니다.' },
-    { id: 10, data: '일곱번째 카테고리 입니다.' },
-    { id: 11, data: '일곱번째 카테고리 입니다.' },
+    { id: 0, data: '구이용' },
+    { id: 1, data: '안심' },
+    { id: 2, data: '등심' },
+    { id: 3, data: '채끝' },
+    { id: 4, data: '특수' },
+    { id: 5, data: '양념' },
+    { id: 6, data: 'Bone' },
+    { id: 7, data: '선물제안' },
+    { id: 8, data: '이벤트' },
+    { id: 9, data: '요리용' },
+    { id: 10, data: '무료배송' },
+    { id: 11, data: '세트' },
   ];
   const [checkedList, setCheckedList] = useState([]);
+  const [selectedDropValue, setSelectedDropValue] =
+    useState('상품을 선택하세요.');
+
+  const PRODUCT_DATA = [
+    { id: null, value: '상품을 선택하세요.' },
+    { id: '0001', value: '알꼬리 300g' },
+    { id: '0002', value: '미니샤토 150g' },
+    { id: '0003', value: '안심추리 150g' },
+    { id: '0004', value: '안심슬라이스 150g' },
+    { id: '0005', value: '립아이' },
+    { id: '0006', value: '로스 등심 200g' },
+    { id: '0007', value: '꽃등심 200g' },
+    { id: '0008', value: '채끝 등심 200g' },
+  ];
 
   const onCheckedElement = (checked, item) => {
     if (checked) {
@@ -27,6 +41,10 @@ function ProdBasicInfo() {
   };
   const onRemove = item => {
     setCheckedList(checkedList.filter(el => el !== item));
+  };
+  const handleDropProduct = e => {
+    const { value } = e.target;
+    setSelectedDropValue(PRODUCT_DATA.filter(el => el.value === value)[0].id);
   };
 
   return (
@@ -79,11 +97,19 @@ function ProdBasicInfo() {
       <S.ProductNameContainer>
         <S.Product>상품명 *</S.Product>
         <S.ProductBar>
-          <S.ProductSearch placeholder={'상품명을 입력해 주세요.'} />
+          <S.ProductSearch onChange={handleDropProduct}>
+            {PRODUCT_DATA.map(el => {
+              return (
+                <option defaultValue={'123'} key={el.id}>
+                  {el.value}
+                </option>
+              );
+            })}
+          </S.ProductSearch>
         </S.ProductBar>
         <S.ProductCode>
           <S.Code>상품 코드</S.Code>
-          <S.ShowingCode>{'[상품코드]'}</S.ShowingCode>
+          <S.ShowingCode>{selectedDropValue}</S.ShowingCode>
         </S.ProductCode>
       </S.ProductNameContainer>
       <S.ProductIntro>
