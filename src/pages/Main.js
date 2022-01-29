@@ -2,7 +2,6 @@ import React from 'react';
 
 import ExpoSalesPeriodSetting from '../components/ExpoSalesPeriodSetting/ExpoSalesPeriodSetting.js';
 import ProdBasicInfo from '../components/ProdBasicInfo/ProdBasicInfo';
-import { ProdBasicInfo } from '../components/ProdBasicInfo/ProdBasicInfo.js';
 import ProdOption from '../components/ProdOption/ProdOption.js';
 import { ProdInfoNotice } from '../components/ProdInfoNotice/ProdInfoNotice.js';
 import { ImageUploadSection } from '../components/ImageUploadSection/ImageUploadSection.js';
@@ -28,19 +27,6 @@ function Main() {
   };
 
   return (
-    <>
-      <Wrapper>
-        {/* <ExpoSalesPeriodSetting /> */}
-        <ProdBasicInfo />
-        {/* <ProdOption />
-        <ProdDescImg />
-        <SalerRecImg />
-        <ProdInfoNotice />
-        <ProdDeliverySetting />
-        <ProdBenefitPerSetting />
-        <EtcSetting /> */}
-      </Wrapper>
-    </>
     <S.Wrapper>
       <S.SideBar>
         <S.LogoWrap>
