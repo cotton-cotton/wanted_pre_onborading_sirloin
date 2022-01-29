@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import * as S from '../ProdBasicInfo/ProdBasicInfo.Style';
 
@@ -132,4 +131,3 @@ function ProdBasicInfo() {
 }
 
 export default ProdBasicInfo;
-
