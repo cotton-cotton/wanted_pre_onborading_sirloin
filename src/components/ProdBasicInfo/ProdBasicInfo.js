@@ -2,21 +2,22 @@ import React, { useState } from 'react';
 import { ImageUpload } from '../ImageUpload/ImageUpload';
 import * as S from '../ProdBasicInfo/ProdBasicInfo.Style';
 
+const CATEGORY_LIST = [
+  { id: 0, data: '첫번째 카테고리 입니다.' },
+  { id: 1, data: '두번째 카테고리 입니다.' },
+  { id: 2, data: '세번째 카테고리 입니다.' },
+  { id: 3, data: '네번째 카테고리 입니다.' },
+  { id: 4, data: '다섯번째 카테고리 입니다.' },
+  { id: 5, data: '여섯번째 카테고리 입니다.' },
+  { id: 6, data: '일곱번째 카테고리 입니다.' },
+  { id: 7, data: '여덟번째 카테고리 입니다.' },
+  { id: 8, data: '아홉번째 카테고리 입니다.' },
+  { id: 9, data: '열번째 카테고리 입니다.' },
+  { id: 10, data: '열한번째 카테고리 입니다.' },
+  { id: 11, data: '열두번째 카테고리 입니다.' },
+];
+
 function ProdBasicInfo() {
-  const CATEGORY_LIST = [
-    { id: 0, data: '첫번째 카테고리 입니다.' },
-    { id: 1, data: '두번째 카테고리 입니다.' },
-    { id: 2, data: '세번째 카테고리 입니다.' },
-    { id: 3, data: '네번째 카테고리 입니다.' },
-    { id: 4, data: '다섯번째 카테고리 입니다.' },
-    { id: 5, data: '여섯번째 카테고리 입니다.' },
-    { id: 6, data: '일곱번째 카테고리 입니다.' },
-    { id: 7, data: '일곱번째 카테고리 입니다.' },
-    { id: 8, data: '일곱번째 카테고리 입니다.' },
-    { id: 9, data: '일곱번째 카테고리 입니다.' },
-    { id: 10, data: '일곱번째 카테고리 입니다.' },
-    { id: 11, data: '일곱번째 카테고리 입니다.' },
-  ];
   const [checkedList, setCheckedList] = useState([]);
 
   const onCheckedElement = (checked, item) => {
