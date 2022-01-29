@@ -9,6 +9,8 @@
 
 ## 1. 배포 주소
 
+http://admin-page-from-sirloin.s3-website.ap-northeast-2.amazonaws.com/
+
 ## 2. 과제 구현 목록
 
 ***1) 노출 및 판매기간 설정***
@@ -56,5 +58,3 @@ npm install
 ```
 npm start
 ```
-
-## 4. 기능별 영상
