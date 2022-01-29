@@ -1,7 +1,7 @@
 // 상품옵션(prod-option)  - 10 11 12 (이미지 추가 및 삭제 + 항목 추가 및 삭제)
 import React, { useState } from 'react';
 import * as S from './ProdOption.style';
-import OptSet from './props/OptSet';
+import OptSet from '../OptSet/OptSet';
 
 function ProdOption() {
   const [optionSetNumber, setOptionSetNumber] = useState(0);
