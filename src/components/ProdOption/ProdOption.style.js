@@ -10,7 +10,7 @@ const btnStyle = css`
 `;
 
 export const ProOptSection = styled.div`
-  margin-bottom: 40px;
+  margin: 40px 0;
 `;
 
 export const ProOptContentBar = styled.div`
@@ -21,6 +21,8 @@ export const ProOptContentBar = styled.div`
   height: 50px;
   padding: 0 20px;
   border: solid 1px ${({ theme }) => theme.color.borderGray};
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 `;
 
 export const ProOptBar = styled.div`
