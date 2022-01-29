@@ -1,5 +1,7 @@
 import React from 'react';
 
-export const ProdInfoNotice = () => {
-  return <div />;
-};
+function ProdInfoNotice() {
+  return <div></div>;
+}
+
+export default ProdInfoNotice;
