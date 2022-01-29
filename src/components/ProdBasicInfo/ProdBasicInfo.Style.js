@@ -133,6 +133,10 @@ export const ProductBar = styled.form`
   height: 100%;
 `;
 
+export const ProductSearch = styled.select`
+  width: 92%;
+  height: 75%;
+`;
 export const ProductSearch = styled.input`
   width: 90%;
   border: 1px solid ${({ theme }) => theme.color.borderGray};
