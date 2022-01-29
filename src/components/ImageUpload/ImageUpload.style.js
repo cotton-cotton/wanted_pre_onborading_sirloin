@@ -11,8 +11,9 @@ export const FileLabel = styled.label`
   height: 40px;
   padding: 0px 50px;
   border-radius: 5px;
-  background-color: white;
   border: 1px solid ${props => props.theme.color.darkPurple};
+  background-color: white;
+  cursor: pointer;
 `;
 
 export const InputImage = styled.input`
@@ -41,6 +42,7 @@ export const RemoveBtn = styled.div`
   height: 25px;
   border: 1px solid ${props => props.theme.color.borderGray};
   border-radius: 50%;
+  cursor: pointer;
 
   &::before {
     position: absolute;

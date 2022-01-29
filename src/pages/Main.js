@@ -3,7 +3,7 @@ import React from 'react';
 import ExpoSalesPeriodSetting from '../components/ExpoSalesPeriodSetting/ExpoSalesPeriodSetting.js';
 import ProdBasicInfo from '../components/ProdBasicInfo/ProdBasicInfo';
 import ProdOption from '../components/ProdOption/ProdOption.js';
-import { ProdInfoNotice } from '../components/ProdInfoNotice/ProdInfoNotice.js';
+import ProdInfoNotice from '../components/ProdInfoNotice/ProdInfoNotice.js';
 import { ImageUploadSection } from '../components/ImageUploadSection/ImageUploadSection.js';
 import ProdDeliverySetting from '../components/ProdDeliverySetting/ProdDeliverySetting.js';
 import { ToggleSetting } from '../components/ToggleSetting/ToggleSetting.js';
@@ -22,6 +22,10 @@ const MENU_LIST = [
 ];
 
 function Main() {
+  const onClickSubmit = () => {
+    alert('상품정보가 저장되었습니다.');
+  };
+
   return (
     <S.Wrapper>
       <S.SideBar>
@@ -41,7 +45,10 @@ function Main() {
       <S.MainWrap>
         <S.Header>
           <S.Blank />
-          <S.HeaderTitle>상품등록</S.HeaderTitle>
+          <S.HeaderContent>
+            <S.HeaderTitle>상품등록</S.HeaderTitle>
+            <S.SaveBtn onClick={onClickSubmit}>저장하기</S.SaveBtn>
+          </S.HeaderContent>
         </S.Header>
         <S.ContentWrap>
           <ExpoSalesPeriodSetting />

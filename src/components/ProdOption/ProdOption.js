@@ -22,9 +22,9 @@ function ProdOption() {
       </S.ProOptContentBar>
       <S.ProOptContent>
         {optionSetNumber === 0 ? (
-          <S.DefaultOptSet>
+          <S.ProOptContentText>
             옵션세트를 추가하여 옵션을 구성해 주세요.
-          </S.DefaultOptSet>
+          </S.ProOptContentText>
         ) : (
           [...Array(optionSetNumber)].map((el, idx) => (
             <OptSet key={idx} optSetDeleteBtn={optSetDeleteBtn} />
